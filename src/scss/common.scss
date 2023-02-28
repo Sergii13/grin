@@ -1,0 +1,13 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.title {
+  font-family: 'RobotoSlab';
+  font-weight: 300;
+  font-size: 80px;
+  line-height: math.div(108, 80);
+  @media (max-width: $tablet) {
+    font-size: rem(60);
+  }
+  @media (max-width: $mobile) {
+    font-size: 40px;
+  }
+}
