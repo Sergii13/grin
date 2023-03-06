@@ -109,3 +109,31 @@
     }
   }
 }
+[data-typed] {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  border-right: 2px solid var(--lightGreen);
+  animation: typing 3s steps(40, end) infinite,
+    blink-caret 0.75s step-end infinite;
+  max-width: max-content;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--lightGreen);
+  }
+}

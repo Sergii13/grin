@@ -1,3 +1,22 @@
 //====================================================================================================
+.footer {
+  padding: 60px 0 40px;
+  @media (max-width: $mobile) {
+    padding: rem(30) 0 36px;
+  }
+  // .footer__container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(32);
+    align-items: center;
+  }
+  // .footer__copy
+  &__copy {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: math.div(24, 16);
+  }
+}
 
 //====================================================================================================
