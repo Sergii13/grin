@@ -47,23 +47,24 @@
   // .portfolio__wrapper
   &__wrapper {
     &.swiper-wrapper {
+      flex-wrap: wrap;
       @media (min-width: $mobile) {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
         gap: rem(20);
       }
-    }
-    @media (max-width: em(870)) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @media (max-width: $mobile) {
-      display: flex;
-      gap: 0;
+      @media (max-width: $mobile) {
+        gap: 0;
+        flex-wrap: nowrap;
+      }
     }
   }
   // .portfolio__slide
   &__slide {
     &.swiper-slide {
+      width: calc(33.33% - 13.33px);
+      @media (max-width: em(860)) {
+        width: calc(50% - 10px);
+      }
+
       &:nth-child(3n + 2) {
         transform: translateY(-60px);
         @media (max-width: em(860)) {
@@ -100,6 +101,7 @@
   align-items: flex-end;
   height: 542px;
   padding: 24px;
+
   @media (max-width: $tablet) {
     height: 400px;
     padding: 0 0 24px;
@@ -140,6 +142,7 @@
   // .item-portfolio__left
   &__left {
     max-width: calc(100% - 70px);
+    flex: 1 1 auto;
   }
   // .item-portfolio__title-link
   &__title-link {
@@ -147,16 +150,11 @@
     font-size: 20px;
     line-height: math.div(24, 20);
     display: inline-block;
-    transition: all 0.3s cubic-bezier(0.5, 0.02, 0.13, 0.5);
-    @media (max-width: $mobile) {
-      overflow: hidden;
-      white-space: nowrap;
-      max-width: 100%;
-      text-overflow: ellipsis;
-    }
-    &:hover {
-      color: #0091bf;
-    }
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+    text-overflow: ellipsis;
+
     &:not(:last-child) {
       margin-bottom: rem(16);
     }
@@ -165,6 +163,12 @@
   &__descr {
     font-size: 16px;
     line-height: math.div(24, 16);
+    p {
+      overflow: hidden;
+      white-space: nowrap;
+      max-width: 100%;
+      text-overflow: ellipsis;
+    }
   }
   // .item-portfolio__link
   &__link {
