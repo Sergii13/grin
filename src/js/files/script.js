@@ -47,7 +47,7 @@ function draw() {
     drops[i]++;
   }
 }
-
+setInterval(draw, 103);
 const texts = document.querySelectorAll('[data-typed]');
 
 // Додання класу, щоб запустити анімацію
